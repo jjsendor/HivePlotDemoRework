@@ -1,40 +1,30 @@
 [
   {
-    "name":     "test.so.a",
+    "name":     "bacteria.from.a",
     "size": 200000,
-    "imports":  [ "test.st.a", "test.st.b", "test.st.c",
-                  "test.to.a", "test.to.b" ]
+    "imports":  [ "protein.to.a", "protein.to.c", "metabolite.to.a" ]
   }, {
-    "name":     "test.so.b",
+    "name":     "bacteria.from.b",
     "size": 100,
-    "imports":  [ "test.st.a", "test.st.b", "test.st.c",
-                  "test.to.a", "test.to.b" ]
+    "imports":  [ "protein.to.b", "protein.to.c", "metabolite.to.a", "metabolite.to.b" ]
   },
 
-
   {
-    "name":     "test.st.a",
-    "size": 1004,
-    "imports":  [ "test.st.b", "test.st.c",
-                  "test.to.a", "test.to.b" ]
+    "name":     "protein.to.a",
+    "imports":  [ "metabolite.to.a" ]
   }, {
-    "name":     "test.st.b",
-    "size": 2340,
-    "imports":  [ "test.st.a", "test.st.c",
-                  "test.to.a", "test.to.b" ]
+    "name":     "protein.to.b",
+    "imports":  [ "metabolite.to.b" ]
   }, {
-    "name":     "test.st.c",
-    "size": 140,
-    "imports":  [ "test.st.a", "test.st.b",
-                  "test.to.a", "test.to.b" ]
+    "name":     "protein.to.c",
+    "imports":  []
   },
 
-
   {
-    "name":     "test.to.a",
-    "imports":  [ ]
+    "name":     "metabolite.to.a",
+    "imports":  []
   }, {
-    "name":     "test.to.b",
-    "imports":  [ ]
+    "name":     "metabolite.to.b",
+    "imports":  []
   }
 ]

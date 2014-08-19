@@ -10,14 +10,14 @@
 
     if (format === 'conv') {  // "conventional"
       var a_off   =   20,
-          a_so    =    0,     a_st    = (120 - a_off),
+          a_so    =    0,     a_st    = (-90 - a_off),
           a_to    = -120,     a_ts    = (120 + a_off),
-          i_rad   =   25,     o_rad   = 300;
+          i_rad   =   25,     o_rad   = 350;
 
     } else {                  // "rectangular"
       var a_so    =  -45,     a_st    = 45,
           a_to    = -135,     a_ts    = 135,
-          i_rad   =   25,     o_rad   = 350;
+          i_rad   =   25,     o_rad   = 3500;
     }
 
     var info  = {
@@ -29,10 +29,9 @@
       },
 
       'axes': {
-        'source':         { 'angle':  degree * a_so },
-        'source-target':  { 'angle':  degree * a_st },
-        'target-source':  { 'angle':  degree * a_ts },
-        'target':         { 'angle':  degree * a_to }
+        'bacteria':         { 'angle':  degree * a_so },
+        'protein':  { 'angle':  degree * a_st },
+        'metabolite':  { 'angle':  degree * a_ts }
       }
     };
 
@@ -40,8 +39,8 @@
   };
 
 
-  var data_sets     = { '#demo_1':   'ze_data.json',
-                        '#demo_2':   'ze_test.json',
+  var data_sets     = { /*'#demo_1':   'ze_data.json',
+                        '#demo_2':   'ze_test.json',*/
                         '#demo_3':   'ze_bact.json' };
 
   var info_sets     = {};

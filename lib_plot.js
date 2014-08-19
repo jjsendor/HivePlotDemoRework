@@ -67,7 +67,7 @@ var display_plot = function(plot_info) {
 
   // Draw the links.
 
-  var path_angle  = function(d) { return g.angle_f(d.type);    };
+  var path_angle  = function(d) { return g.angle_f(d.node.type);    };
   var path_radius = function(d) { return g.radius_f(d.node.index); };
 
   g.svg.append('g')
@@ -88,9 +88,10 @@ var display_plot = function(plot_info) {
   var fill        = function(d) { return g.color_f(d.packageName); };
 
   var transform   = function(d) {
-    return 'rotate(' + degrees( g.angle_f(d.type) ) + ')';
+    return 'rotate(' + degrees( g.angle_f(d.node.type) ) + ')';
   };
 
+  console.log("Nodes, once more: ", g.nodes);
   g.svg.append('g')
     .attr('class', 'nodes')
     .selectAll('.node')

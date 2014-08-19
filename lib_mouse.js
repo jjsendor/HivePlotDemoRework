@@ -38,9 +38,9 @@ var setup_mouse = function(plot_info) {
     if (!html_inp) return '';
 
     if (css_class == 'ib')
-      hdr  = '<h4 class="ib">Imported by:</h4>';
+      hdr  = '<h4 class="ib">Produced by:</h4>';
     else
-      hdr  = '<h4 class="im">Imports:</h4>';
+      hdr  = '<h4 class="im">Produces:</h4>';
 
     return '<span class="' + css_class+ '">'
          + hdr + html_inp + '</span>';

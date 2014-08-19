@@ -60,7 +60,7 @@ var prep_data = function(plot_info, nodes) {
 
   var index_by_node_name = function(d) {
     d.connectors          = [];
-    d.packageName         = d.name.split('.')[1];
+    d.packageName         = d.name.split('.')[0];
     g.nodesByName[d.name] = d;
   };
 
@@ -128,7 +128,8 @@ var prep_data = function(plot_info, nodes) {
   // Determine the type of each node, based on incoming and outgoing links.
 
   var node_type = function(node) {
-    if (node.source && node.target) {
+    node.type = node.name.split(".")[0];
+    /*if (node.source && node.target) {
       node.type         = node.source.type = 'target-source';
       node.target.type  = 'source-target';
     } else if (node.source) {
@@ -138,7 +139,7 @@ var prep_data = function(plot_info, nodes) {
     } else {
       node.connectors   = [{ node: node }];
       node.type         = 'source';
-    }
+    }*/
   };
 
   nodes.forEach(node_type);
@@ -167,8 +168,8 @@ var prep_data = function(plot_info, nodes) {
 
   // Duplicate the target-source axis as source-target.
 
-  g.nodesByType.push({ key:     'source-target',
-                       values:  g.nodesByType[2].values });
+  //g.nodesByType.push({ key:     'source-target',
+  //                     values:  g.nodesByType[2].values });
 
   // Compute the rank for each type, with padding between packages.
 
@@ -193,12 +194,13 @@ var prep_data = function(plot_info, nodes) {
 
   // Console logging calls.
   
-  if (false) {
+  if (true) {
     console.log('g.links',          g.links); //T
     console.log('g.nodes',          g.nodes); //T
     console.log('g.nodesByType',    g.nodesByType); //T
     console.log('g.nodesByName',    g.nodesByName); //T
     console.log('g.sources',        g.sources); //T
+    console.log('g.targets',        g.targets); //T
   }
 
 };
