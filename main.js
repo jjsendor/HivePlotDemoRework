@@ -41,7 +41,8 @@
 
 
   var data_sets     = { '#demo_1':   'ze_data.json',
-                        '#demo_2':   'ze_test.json' };
+                        '#demo_2':   'ze_test.json',
+                        '#demo_3':   'ze_bact.json' };
 
   var info_sets     = {};
 

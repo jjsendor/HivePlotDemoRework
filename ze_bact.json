@@ -1,0 +1,40 @@
+[
+  {
+    "name":     "test.so.a",
+    "size": 200000,
+    "imports":  [ "test.st.a", "test.st.b", "test.st.c",
+                  "test.to.a", "test.to.b" ]
+  }, {
+    "name":     "test.so.b",
+    "size": 100,
+    "imports":  [ "test.st.a", "test.st.b", "test.st.c",
+                  "test.to.a", "test.to.b" ]
+  },
+
+
+  {
+    "name":     "test.st.a",
+    "size": 1004,
+    "imports":  [ "test.st.b", "test.st.c",
+                  "test.to.a", "test.to.b" ]
+  }, {
+    "name":     "test.st.b",
+    "size": 2340,
+    "imports":  [ "test.st.a", "test.st.c",
+                  "test.to.a", "test.to.b" ]
+  }, {
+    "name":     "test.st.c",
+    "size": 140,
+    "imports":  [ "test.st.a", "test.st.b",
+                  "test.to.a", "test.to.b" ]
+  },
+
+
+  {
+    "name":     "test.to.a",
+    "imports":  [ ]
+  }, {
+    "name":     "test.to.b",
+    "imports":  [ ]
+  }
+]
